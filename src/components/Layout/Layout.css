@@ -1,0 +1,28 @@
+.layoutWrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: stretch;
+    flex-direction: column;
+}
+
+.contentWrapper {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.pageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+    padding: 90px 0 0 0;
+}
+
+.container {
+    position: relative;
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
