@@ -1,0 +1,34 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+}
+
+
+a {
+    display: block;
+    text-transform: none;
+    text-decoration: none;
+    color: #fff;
+}
+
