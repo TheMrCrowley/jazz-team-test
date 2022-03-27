@@ -5,6 +5,8 @@ import { getMonthData } from '../../helpers/calendarHelper';
 import WeekLine from './WeekLine';
 import { getParsedItem, hasItem, ITodo, setItemToStorage } from '../../helpers/localStorageHelper';
 import { searchHelper } from '../../helpers/searchHelper';
+import useTypedSelector from '../../hooks/useTypedSelector';
+import { useNavigate } from 'react-router-dom';
 
 const Calendar = () => {
   const monthNames = [
@@ -26,6 +28,8 @@ const Calendar = () => {
   const [searchValue, setSearchValue] = useState('');
   const [todos, setTodos] = useState<ITodo[]>();
   const [matchTodos, setMatchTodos] = useState<ITodo[]>();
+  const { isAuth } = useTypedSelector((state) => state.login);
+  const navigate = useNavigate();
 
   const monthData = getMonthData(date.getFullYear(), date.getMonth());
 
@@ -42,6 +46,9 @@ const Calendar = () => {
   };
 
   useEffect(() => {
+    if (!isAuth) {
+      navigate('/login');
+    }
     if (!hasItem('todos')) {
       setItemToStorage('todos', {});
     } else {

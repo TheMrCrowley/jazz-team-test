@@ -44,16 +44,18 @@ const ProfilePage = () => {
       </p>
       <h2>Todos:</h2>
       <div className="todo-list">
-        {todos?.map((todo) => (
-          <div className="todo-item" key={todo.id}>
-            <div>
-              Date: {new Date(+todo.id).getDate()}.{new Date(+todo.id).getMonth() + 1}.
-              {new Date(+todo.id).getFullYear()};
-            </div>
-            <div>Title: {todo.title};</div>
-            <div>Description: {todo.description};</div>
-          </div>
-        ))}
+        {todos?.length
+          ? todos?.map((todo) => (
+              <div className="todo-item" key={todo.id}>
+                <div>
+                  Date: {new Date(+todo.id).getDate()}.{new Date(+todo.id).getMonth() + 1}.
+                  {new Date(+todo.id).getFullYear()};
+                </div>
+                <div>Title: {todo.title};</div>
+                <div>Description: {todo.description};</div>
+              </div>
+            ))
+          : 'Список задач пока что пуст...'}
       </div>
     </div>
   );
