@@ -1,0 +1,15 @@
+.profile-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    max-width: 70%;
+    height: calc(100vh - 200px);
+}
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    font-size: 24px;
+    padding: 0 0 0 1rem;
+}
